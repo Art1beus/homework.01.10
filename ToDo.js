@@ -28,7 +28,7 @@ class TodoList {
         }
         return completedTasks
     }
-     getPendingTasks() {
+    getPendingTasks() {
         let pendingTasks = []
         for (let i = 0; i < this.tasks.length; i++) {
             if (this.tasks[i].status === false) {
@@ -36,6 +36,19 @@ class TodoList {
             }
         }
         return pendingTasks
+    }
+    getTaskCount() {
+        let total = this.tasks.length
+        let completed = 0
+        let pending = 0
+        for (let i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].status === true) {
+                completed++
+            } else {
+                pending++
+            }
+        }
+        return {total: total, completed: completed, pending: pending}
     }
 }
 
@@ -60,5 +73,8 @@ myTodo.getCompletedTasks()
 
 // Получение только НЕвыполненых заданий
 myTodo.getPendingTasks()
+
+// Получение статистики по заданиям
+myTodo.getTaskCount()
 
 console.log(myTodo)
