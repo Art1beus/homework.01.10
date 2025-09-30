@@ -28,6 +28,15 @@ class TodoList {
         }
         return completedTasks
     }
+     getPendingTasks() {
+        let pendingTasks = []
+        for (let i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].status === false) {
+                pendingTasks.push(this.tasks[i])
+            }
+        }
+        return pendingTasks
+    }
 }
 
 const myTodo = new TodoList("Мои задачи")
@@ -48,5 +57,8 @@ myTodo.getAllTasks()
 
 // Получение только выполненых заданий
 myTodo.getCompletedTasks()
+
+// Получение только НЕвыполненых заданий
+myTodo.getPendingTasks()
 
 console.log(myTodo)
