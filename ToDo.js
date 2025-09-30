@@ -19,6 +19,15 @@ class TodoList {
     getAllTasks() {
         return this.tasks
     }
+    getCompletedTasks() {
+        let completedTasks = []
+        for (let i = 0; i < this.tasks.length; i++) {
+            if (this.tasks[i].status === true) {
+                completedTasks.push(this.tasks[i])
+            }
+        }
+        return completedTasks
+    }
 }
 
 const myTodo = new TodoList("Мои задачи")
@@ -36,5 +45,8 @@ myTodo.deleteTask(1)
 
 // Получение всех заданий
 myTodo.getAllTasks()
+
+// Получение только выполненых заданий
+myTodo.getCompletedTasks()
 
 console.log(myTodo)
