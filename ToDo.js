@@ -10,11 +10,19 @@ class TodoList {
             status: false
         })
     }
+    completeTask(taskId) {
+       this.tasks[taskId - 1].status = true 
+    }
 }
 
 const myTodo = new TodoList("Мои задачи")
+
+// Добавляем задачи
 myTodo.addTask("Купить молоко")
 myTodo.addTask("Сделать домашку")
 myTodo.addTask("Позвонить маме")
+
+// Отмечаем как выполненную
+myTodo.completeTask(1)
 
 console.log(myTodo)
