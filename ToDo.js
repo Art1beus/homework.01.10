@@ -16,6 +16,9 @@ class TodoList {
     deleteTask(taskId) {
         this.tasks.splice(taskId - 1, 1)
     }
+    getAllTasks() {
+        return this.tasks
+    }
 }
 
 const myTodo = new TodoList("Мои задачи")
@@ -30,5 +33,8 @@ myTodo.completeTask(1)
 
 // Удаляем выбранную задачу
 myTodo.deleteTask(1)
+
+// Получение всех заданий
+myTodo.getAllTasks()
 
 console.log(myTodo)
