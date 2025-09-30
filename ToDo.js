@@ -11,7 +11,10 @@ class TodoList {
         })
     }
     completeTask(taskId) {
-       this.tasks[taskId - 1].status = true 
+        this.tasks[taskId - 1].status = true
+    }
+    deleteTask(taskId) {
+        this.tasks.splice(taskId - 1, 1)
     }
 }
 
@@ -24,5 +27,8 @@ myTodo.addTask("Позвонить маме")
 
 // Отмечаем как выполненную
 myTodo.completeTask(1)
+
+// Удаляем выбранную задачу
+myTodo.deleteTask(1)
 
 console.log(myTodo)
